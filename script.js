@@ -49,6 +49,8 @@ function playGame(numberOfRounds) {
         console.log("Round:",i ,"Human Score:", humanScore, "Computer Score:", computerScore, "Human Choice:", humanChoice, "Computer Choice:",computerChoice)
     }
 
+    console.log("Result:", "Total Human Score:", humanScore, "Total Computer Score:", computerScore)
+
     if (humanScore > computerScore) {
         console.log("User Won!")
     } else if (humanScore < computerScore) {
