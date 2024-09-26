@@ -46,18 +46,22 @@ function playGame(numberOfRounds) {
         const computerChoice = getComputerChoice()
 
         humanScore, computerScore = playRound(humanChoice, computerChoice)
-        console.log("Round:",i ,"Human Score:", humanScore, "Computer Score:", computerScore, "Human Choice:", humanChoice, "Computer Choice:",computerChoice)
+        console.log("Round:",i)
+        console.log(`You chose: ${humanChoice}`);
+        console.log(`Computer chose: ${computerChoice}`);
+        console.log(`Current Score - You: ${humanScore}, Computer: ${computerScore}`);
+        console.log("--------------------");
     }
-
-    console.log("Result:", "Total Human Score:", humanScore, "Total Computer Score:", computerScore)
 
     if (humanScore > computerScore) {
-        console.log("User Won!")
+        console.log("Final result: User Won!")
     } else if (humanScore < computerScore) {
-        console.log("Computer Won!")
+        console.log("Final result: Computer Won!")
     } else {
-        console.log("Draw")
+        console.log("Final result: Draw")
     }
+    console.log("Total Human Score:", humanScore, "Total Computer Score:", computerScore)
+
 }
 
-playGame(4)
+playGame(2)
