@@ -14,7 +14,7 @@ function getHumanChoice() {
     }
   }
 
-function playGame(numberOfRounds) {
+function playGame(humanChoice, numberOfRounds) {
     humanScore = 0
     computerScore = 0
 
@@ -42,7 +42,7 @@ function playGame(numberOfRounds) {
     }
 
     for (let i=1; i<= numberOfRounds; i++) {
-        const humanChoice = getHumanChoice()
+        // const humanChoice = getHumanChoice()
         const computerChoice = getComputerChoice()
 
         humanScore, computerScore = playRound(humanChoice, computerChoice)
@@ -64,4 +64,28 @@ function playGame(numberOfRounds) {
 
 }
 
-playGame(2)
+// playGame(2)
+
+// const buttons = document.querySelector("#one");
+// buttons.onclick = () => alert("Hello World");
+
+// const buttons = document.querySelectorAll("button");
+// buttons.addEventListener("click", () => {
+//   alert("Hello World");
+// });
+
+
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll("button");
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+  // and for each one we add a 'click' listener
+  button.addEventListener("click", (event) => {
+        playGame(button.textContent.toLowerCase(),1)
+    
+  });
+});
+
+// 1. User clicks the button: rock, paper scissors
+// 2. Button click runs the playGame function 
