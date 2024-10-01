@@ -45,13 +45,6 @@ function showCurrentStatus() {
   //   body.append(div);
 }
 
-function resetGame() {
-  numRounds = 5;
-  numGamesPlayed = 0;
-  compScore = 0;
-  humanScore = 0;
-}
-
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
@@ -60,7 +53,6 @@ buttons.forEach((button) => {
 });
 
 const handleButtonClick = (humanChoice) => {
-  // if(numGamesPlayed < numRounds){
   let winner = playRound(humanChoice, getComputerChoice());
   if (winner === "human") {
     humanScore += 1;
@@ -68,11 +60,7 @@ const handleButtonClick = (humanChoice) => {
     compScore += 1;
   }
   numGamesPlayed += 1;
-  console.log(humanScore, compScore, numGamesPlayed);
 
-  // } else {
-  //     resetGame()
-  // }
   showCurrentStatus();
 };
 
@@ -95,4 +83,11 @@ function playRound(humanChoice, computerChoice) {
   } else if (humanChoice === "scissors" && computerChoice === "paper") {
     return "human";
   } else return "draw";
+}
+
+function resetGame() {
+  numRounds = 5;
+  numGamesPlayed = 0;
+  compScore = 0;
+  humanScore = 0;
 }
