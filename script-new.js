@@ -5,7 +5,7 @@ let humanScore = 0;
 
 function showCurrentStatus() {
   //create the div
-  const div = document.createElement("div");
+  const div = document.querySelector("div.results");
   const h1 = document.querySelector("h1");
   const body = document.querySelector("body");
 
@@ -34,10 +34,14 @@ function showCurrentStatus() {
 
     resetGame();
   }
+  // option 1: use div = document.querySelector("div.results") and edit elements directly
+  // option 2: use createElement results and replace all children of a div results
+  // option 3: use createElement("div.results") and body.replaceChild but then need to specify which child we are replacing and which one we want in that place
+  // option 4: use createElement("div.results") and body.append but it will display score each round
 
-  //add div to the dom
-  const results = document.querySelector(".results");
-  results.replaceChildren(div);
+  // I only need to use the following append/replace when I am working with CREATE ELEMENT!!! When it's already created I can just edit the text
+  //   const results = document.querySelector(".results");
+  //   results.replaceChildren(div);
   //   body.append(div);
 }
 

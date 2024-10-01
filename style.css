@@ -98,4 +98,6 @@ h1 {
 .results {
     font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
     text-align: center;
+    min-height: 100px; 
+    width: 100%
 }
