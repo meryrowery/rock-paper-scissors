@@ -6,29 +6,39 @@ let humanScore = 0;
 function showCurrentStatus() {
   //create the div
   const div = document.createElement("div");
+  const h1 = document.querySelector("h1");
+  const body = document.querySelector("body");
 
-  // if (numGamesPlayed === 0) {
-  //     div.textContent = (`Game status: Start new game`)
-  // } else
   if (numRounds > numGamesPlayed) {
     // div.textContent = `Number of Rounds: ${numRounds}\n Games played: ${numGamesPlayed},Score Player: ${humanScore} vs Score Computer ${compScore}, Game status: Continue`;
     div.innerHTML = `
     Games played: ${numGamesPlayed}/${numRounds}<br>
-    Score Player: ${humanScore} vs Score Computer: ${compScore}<br>
-    Game status: Game is on!`;
+    Score Player: ${humanScore} vs Score Computer: ${compScore}`;
+
+    h1.textContent = "Let's play a game!";
   } else if (numRounds === numGamesPlayed) {
     // div.textContent = (`Number of Rounds: ${numRounds}\n Games played: ${numGamesPlayed},Score Player: ${humanScore} vs Score Computer ${compScore}, Game status: Ended, Press key to start a new game`)
     div.innerHTML = `
     Games played: ${numGamesPlayed}/${numRounds}<br>
     Score Player: ${humanScore} vs Score Computer: ${compScore}<br>
-    Game status: Ended<br>
-    Press key to start a new game`;
+    <br>
+    Game over. Press key to start a new game.`;
+
+    if (compScore === humanScore) {
+      h1.textContent = "It's a tie!";
+    } else if (compScore > humanScore) {
+      h1.textContent = "You lost! :(";
+    } else if (compScore < humanScore) {
+      h1.textContent = "You won!";
+    }
+
     resetGame();
   }
 
   //add div to the dom
   const results = document.querySelector(".results");
   results.replaceChildren(div);
+  //   body.append(div);
 }
 
 function resetGame() {
