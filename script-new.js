@@ -12,14 +12,14 @@ function showCurrentStatus() {
   // } else
   if (numRounds > numGamesPlayed) {
     // div.textContent = `Number of Rounds: ${numRounds}\n Games played: ${numGamesPlayed},Score Player: ${humanScore} vs Score Computer ${compScore}, Game status: Continue`;
-    div.innerHTML = `Number of Rounds: ${numRounds}<br>
-    Games played: ${numGamesPlayed}<br>
+    div.innerHTML = `
+    Games played: ${numGamesPlayed}/${numRounds}<br>
     Score Player: ${humanScore} vs Score Computer: ${compScore}<br>
     Game status: Game is on!`;
   } else if (numRounds === numGamesPlayed) {
     // div.textContent = (`Number of Rounds: ${numRounds}\n Games played: ${numGamesPlayed},Score Player: ${humanScore} vs Score Computer ${compScore}, Game status: Ended, Press key to start a new game`)
-    div.innerHTML = `Number of Rounds: ${numRounds}<br>
-    Games played: ${numGamesPlayed}<br>
+    div.innerHTML = `
+    Games played: ${numGamesPlayed}/${numRounds}<br>
     Score Player: ${humanScore} vs Score Computer: ${compScore}<br>
     Game status: Ended<br>
     Press key to start a new game`;
